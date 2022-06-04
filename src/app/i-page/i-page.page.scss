@@ -1,0 +1,42 @@
+ion-content {
+
+    background-color: #F9F9F9; 
+    font-family: 'Rubik', sans-serif;
+    --offset-bottom: auto!important;
+    --overflow: hidden;
+    
+    }
+
+
+.img1 {
+    position: relative;
+    margin-left: -50px;
+    width: 85%;
+    height: auto;
+    
+}
+
+h1{
+   font-weight: 700;
+   font-size: 16px;
+   text-align: center;
+   margin-top: 8px;
+   color: #303030;
+}
+
+ion-button {
+    display: flex;
+    
+    justify-content: center;
+    //margin-right: 57%;
+    //margin-left: 9%;
+    margin-right: 32.5%;
+    margin-left: 32.5%;
+    font-family: 'Rubik', sans-serif;
+    font-size: 12px;
+    height: 35px;
+    width: auto;
+    --border-radius: 50px;
+    margin-top: 40px ;
+
+}

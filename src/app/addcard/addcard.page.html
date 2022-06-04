@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"color="primary" size="large"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Add card</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <H3>Enter the details to add new Card</H3>
+  <form [formGroup]="addcardform">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Card Name</ion-label>
+        <ion-input type="text" formControlName="cardname"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Description</ion-label>
+        <ion-input type="text" formControlName="description"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Price</ion-label>
+        <ion-input type="number" formControlName="price"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Location</ion-label>
+        <ion-input type="text" formControlName="location"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Category</ion-label>
+        <ion-select placeholder="Select" formControlName="category">
+          <ion-select-option value="Category 1">Category 1</ion-select-option>
+          <ion-select-option value="Category 2">Category 2</ion-select-option>
+          <ion-select-option value="Category 3">Category 3</ion-select-option>
+          <ion-select-option value="Category 4">Category 4</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Image</ion-label>
+        <ion-input type="file" accept="image/*" (change)="uploadFile($event)"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="block" [disabled]="!addcardform.valid" (click)="addcard()">Add card</ion-button>
+  </form>
+</ion-content>

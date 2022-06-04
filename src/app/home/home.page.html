@@ -1,0 +1,94 @@
+
+<!-- header-->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"color="primary" size="large"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Watodoo</ion-title>
+    <ion-buttons slot="end" (click)="applyfilter()">
+      <ion-button fill="clear" color="primary" >
+        <ion-icon slot="icon-only" name="funnel-sharp" class="filter" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+<ion-item lines="none" *ngIf="isSearch">
+  <!-- Searchbar with danger color -->
+<ion-searchbar color="light" mode="ios" placeholder="enter name,location,category" [(ngModel)]="filterTerm"></ion-searchbar>
+<ion-button size="small" color="light" (click)="searchData()">
+  <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+</ion-button>
+</ion-item>
+<p *ngIf="isSearch" style="text-align: center;">OR</p>
+<ion-item lines="none" *ngIf="isSearch">
+  <ion-label>
+    <p>Min Price</p>
+    <br>
+    <p>Max Price</p>
+  </ion-label>
+  <ion-label>
+    <input type="number" placeholder="Min price" class="innput" [(ngModel)]="minimum">
+    <br>
+    <br>
+    <input type="number" placeholder="Max price" class="innput" [(ngModel)]="maximum">
+  </ion-label>
+</ion-item>
+<ion-button *ngIf="isSearch" size="small" color="primary" expand="block" (click)="searchDataPrice()">
+  Search price
+</ion-button>
+  <div *ngIf="allcards.length > 0">
+    <ion-card *ngFor="let item of allcards" (swipeLeft)="onSwipeLeft($event,item)" (swipeRight)="onSwipeRight($event,item)">
+      <img class="images-style" src="{{item.imageUrl}}" />
+      <ion-card-header>
+        <ion-card-subtitle>{{item.category}}</ion-card-subtitle>
+        <ion-card-title>{{item.cardname}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Description: {{item.description}}</p>
+        <p>Location: {{item.location}}</p>
+        <p>Price: {{ item.price | currency:'USD' }}</p>
+          <div class="footer">
+          
+          <!-- dislike button-->
+                <ion-button color="secondary" class="button1" (click)="onSwipeLeft($event,item)">
+                  <ion-icon name="close-sharp" class="close"></ion-icon>
+                </ion-button>
+          
+          <div class="space"></div>
+          <!-- like button-->
+                <ion-button color="secondary"  class="button1" (click)="onSwipeRight($event,item)">
+                  <ion-icon name="heart-sharp"  class="heart"></ion-icon>
+                </ion-button>
+              </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <ion-item *ngIf="allcards.length === 0">
+   <p>Data not found!</p>
+  </ion-item>
+</ion-content>
+
+
+
+<!--footer-->
+<!-- <ion-footer class="ion-no-border">
+  <ion-toolbar color="#f9f9f9" >
+<div class="footer">
+
+
+      <ion-button color="#f9f9f9" class="button1" >
+        <ion-icon name="close-sharp" class="close"></ion-icon>
+      </ion-button>
+
+<div class="space"></div>
+
+      <ion-button color="#f9f9f9"  class="button1" >
+        <ion-icon name="heart-sharp"  class="heart"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer> -->

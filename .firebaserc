@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "watodoo2": {
+      "hosting": {
+        "app": [
+          "watodoo2"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "watodoo2"
+  }
+}

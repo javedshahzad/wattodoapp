@@ -1,0 +1,54 @@
+<ion-content scroll-y="false">
+
+  <div>
+   <img src="../../assets/img/wave2.png" alt="waves" class="waves">
+  </div>
+ 
+   <div class="spaceship">
+   <img src="../../assets/img/spaceship.png" alt="spaceship" class="spaceshipimg" >
+   </div>
+
+   <form [formGroup]="loginform">
+     
+   <div class="form">
+
+    
+    <p>Email:</p>
+    <input type="mail" placeholder="exemple@mail.com" formControlName="email">
+  
+
+  
+    <p>Mot De Passe:</p>
+    <input type="password" placeholder="xxxxxxxxxx" formControlName="password">
+  
+ </div>
+
+ <a  class="forget"> Mot De Passe Oublié?</a>
+
+ <div>
+  <ion-button  color="success"  class="sign-up" [disabled]="!loginform.valid" (click)="login()" type="submit">Se Connecter</ion-button>
+</div>
+
+
+   </form>
+    <div class="ion-text-center" routerLink="/signup">
+      <p>Don't have account?</p>
+      <p>Signup</p>
+    </div>
+  <div>
+    <p class="p"> <span>Ou continuez avec:</span></p>
+  </div>
+
+
+
+  <ion-row>
+    <ion-button color="primary" routerLink="" class="bottom-button">
+      <ion-icon slot="icon-only" name="logo-google" class="logo"></ion-icon>
+    </ion-button>
+    <ion-button color="primary" routerLink="" class="bottom-button">
+      <ion-icon name="logo-facebook" class="logo"></ion-icon>
+    </ion-button>
+    <ion-button color="primary" routerLink="" class="bottom-button">
+      <ion-icon slot="icon-only" name="logo-apple"  class="logo"></ion-icon>
+    </ion-button>
+  </ion-row>

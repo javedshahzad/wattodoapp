@@ -1,0 +1,88 @@
+//!!!!!   header   !!!!!!
+  
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+}
+
+a {
+  text-decoration: none;
+}
+ion-toolbar{
+  background:#f9f9f9;
+}
+ion-card{
+  background:#f9f9f9;
+}
+ion-content {
+  --ion-background-color: #F9F9F9;
+  font-family:'Rubik', sans-serif; 
+  }
+
+ion-title {
+  font-family:'Rubik', sans-serif; 
+  text-align: center;
+  color: #E80B8B;
+  font-weight:bold;
+  }
+
+
+
+
+//!!!!!   footer   !!!!!!
+
+.footer{
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+
+}
+
+.space {
+  width: 25%;
+  
+}
+
+
+//!!!!!   footer button   !!!!!!
+.button1 {
+  --border-radius: 100%;
+  --box-shadow:3px 6px 22px -3px rgba(0,0,0,0.4);
+  height: 55px;
+  width: 55px;
+  margin-top: 10px;
+  
+}
+
+// like button
+.heart {
+  position: absolute;
+  justify-content: center;
+  color:#59D474 !important;
+  --font-weight: bold !important;
+  --ionicon-stroke-width: 14px;
+  stroke: #59D474;
+  width: 150%;
+  height: 150%;
+  
+}
+
+//dislike button
+.close {
+  position: absolute;
+    color:#f62525 !important;
+    --font-weight: bold !important;
+    stroke-width: 50px;
+    width: 150%;
+    height: 150%;
+    
+  }
+  .images-style{
+    height: 350px;
+    width: 100%;
+  }
+.innput{
+  width: 90%;
+}

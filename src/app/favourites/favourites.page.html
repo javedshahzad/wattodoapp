@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"color="primary" size="large"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Favourites</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let item of allFavourite">
+    <img src="{{item.imageUrl}}" />
+    <ion-card-header>
+      <ion-card-subtitle>{{item.category}}</ion-card-subtitle>
+      <ion-card-title>{{item.cardname}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+    Description: {{item.description}}
+      <p>Price: {{ item.price | currency:'USD' }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
