@@ -40,34 +40,34 @@
 <ion-button *ngIf="isSearch" size="small" color="primary" expand="block" (click)="searchDataPrice()">
   Search price
 </ion-button>
-  <div *ngIf="allcards.length > 0">
-    <ion-card *ngFor="let item of allcards" (swipeLeft)="onSwipeLeft($event,item)" (swipeRight)="onSwipeRight($event,item)">
-      <img class="images-style" src="{{item.imageUrl}}" />
+  <div *ngIf="allcards">
+    <ion-card (swipeLeft)="onSwipeLeft($event,allcards)" (swipeRight)="onSwipeRight($event,allcards)">
+      <img class="images-style" src="{{allcards.imageUrl}}" />
       <ion-card-header>
-        <ion-card-subtitle>{{item.category}}</ion-card-subtitle>
-        <ion-card-title>{{item.cardname}}</ion-card-title>
+        <ion-card-subtitle>{{allcards.category}}</ion-card-subtitle>
+        <ion-card-title>{{allcards.cardname}}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <p>Description: {{item.description}}</p>
-        <p>Location: {{item.location}}</p>
-        <p>Price: {{ item.price | currency:'USD' }}</p>
+        <p>Description: {{allcards.description}}</p>
+        <p>Location: {{allcards.location}}</p>
+        <p>Price: {{ allcards.price | currency:'USD' }}</p>
           <div class="footer">
           
           <!-- dislike button-->
-                <ion-button color="secondary" class="button1" (click)="onSwipeLeft($event,item)">
+                <ion-button color="secondary" class="button1" (click)="removeFavourite($event,allcards)">
                   <ion-icon name="close-sharp" class="close"></ion-icon>
                 </ion-button>
           
           <div class="space"></div>
           <!-- like button-->
-                <ion-button color="secondary"  class="button1" (click)="onSwipeRight($event,item)">
+                <ion-button color="secondary"  class="button1" (click)="addFavourite($event,allcards)">
                   <ion-icon name="heart-sharp"  class="heart"></ion-icon>
                 </ion-button>
               </div>
       </ion-card-content>
     </ion-card>
   </div>
-  <ion-item *ngIf="allcards.length === 0">
+  <ion-item *ngIf="!allcards">
    <p>Data not found!</p>
   </ion-item>
 </ion-content>
